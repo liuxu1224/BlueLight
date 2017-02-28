@@ -19,7 +19,7 @@
  *
 */
 
-namespace pocketmine\level\generator\normal\populator;
+namespace pocketmine\level\generator\populator;
 
 use pocketmine\block\Block;
 use pocketmine\level\ChunkManager;
