@@ -44,7 +44,6 @@ class GroundCover extends Populator{
 					$diffY = 0;
 					if(!$cover[0]->isSolid()){
 						$diffY = 1;
-					}
 
 					$column = $chunk->getBlockIdColumn($x, $z);
 					for($y = 127; $y > 0; --$y){
