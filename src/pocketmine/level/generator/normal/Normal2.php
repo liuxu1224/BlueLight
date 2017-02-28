@@ -4,31 +4,9 @@
 Principal generator. Please use this generator.
  */
 
+
 namespace pocketmine\level\generator\normal;
 
-use pocketmine\block\Block;
-use pocketmine\block\CoalOre;
-use pocketmine\block\DiamondOre;
-use pocketmine\block\Dirt;
-use pocketmine\block\GoldOre;
-use pocketmine\block\Gravel;
-use pocketmine\block\IronOre;
-use pocketmine\block\LapisOre;
-use pocketmine\block\RedstoneOre;
-use pocketmine\level\ChunkManager;
-use pocketmine\level\generator\biome\Biome;
-use pocketmine\level\generator\biome\BiomeSelector;
-use pocketmine\level\generator\Generator;
-use pocketmine\level\generator\noise\Simplex;
-use pocketmine\level\generator\object\OreType;
-use pocketmine\level\generator\populator\Cave;
-use pocketmine\level\generator\populator\GroundCover;
-use pocketmine\level\generator\populator\Ore;
-use pocketmine\math\Vector3;
-use pocketmine\utils\Random;
-
-class Normal2 extends Normal{
-	namespace pocketmine\level\generator\normal;
 use pocketmine\block\Block;
 use pocketmine\block\CoalOre;
 use pocketmine\block\DiamondOre;
