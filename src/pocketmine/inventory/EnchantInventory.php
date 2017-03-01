@@ -80,7 +80,7 @@ class EnchantInventory extends TemporaryInventory{
 		return $min + mt_rand() / mt_getrandmax() * ($max - $min);
 	}
 
-	/*
+	
 	public function onSlotChange($index, $before, $send){
 		parent::onSlotChange($index, $before, $send);
 
@@ -174,7 +174,7 @@ class EnchantInventory extends TemporaryInventory{
 			}
 		}
 	}
-	*/
+	
 
 	public function onClose(Player $who){
 		parent::onClose($who);
