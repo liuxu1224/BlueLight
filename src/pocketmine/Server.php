@@ -46,7 +46,8 @@ use pocketmine\inventory\CraftingManager;
 use pocketmine\inventory\InventoryType;
 use pocketmine\inventory\Recipe;
 use pocketmine\item\enchantment\Enchantment;
-use pocketmine\item\Item;
+use pocketmine\item\enchantment\EnchantmentLevelTable;
+use pocketmine\item\Item;;
 use pocketmine\lang\BaseLang;
 use pocketmine\level\format\io\LevelProviderManager;
 use pocketmine\level\format\io\leveldb\LevelDB;
@@ -1603,7 +1604,7 @@ class Server{
 			Effect::init();
 			Attribute::init();
 			EnchantmentLevelTable::init();
-			Color::init();
+			//Color::init();
 			$this->craftingManager = new CraftingManager();
 
 			$this->pluginManager = new PluginManager($this, $this->commandMap);
