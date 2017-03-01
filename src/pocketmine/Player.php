@@ -302,12 +302,15 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 	/**
 	 * Systems quoted from Genisys.
 	 */
-	public function setExperienceAndLevel(int $exp, int $level){
-		$this->expLevel = $level;
-		$this->exp = $exp;
-		$this->expCooldown = microtime(true);
-		$this->calcExpLevel();
-		$this->updateExperience();
+	        public function setExperienceAndLevel($exp, $level){
+ 		$this->server->getPluginManager()->callEvent($ev = new PlayerExperienceChangeEvent($this, $exp, $level));
+ 		if($ev->isCancelled()) return false;
+ 		$this->explevel = $level;
+ 		$this->experience = $exp;
+ 		$this->calcExpLevel();
+ 		$this->updateExperience();
+ 		return true;
+		
 	}
 
 	public function setExp(int $exp){
