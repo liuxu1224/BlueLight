@@ -27,7 +27,7 @@ use pocketmine\item\Item;
 use pocketmine\level\format\Chunk as FullChunk;
 use pocketmine\nbt\NBT;
 use pocketmine\nbt\tag\CompoundTag;
-use pocketmine\nbt\tag\EnumTag;
+#use pocketmine\nbt\tag\EnumTag;
 use pocketmine\nbt\tag\IntTag;
 use pocketmine\nbt\tag\StringTag;
 use pocketmine\network\protocol\CraftingDataPacket;
@@ -40,8 +40,8 @@ class EnchantTable extends Spawnable implements InventoryHolder, Container, Name
 	public function __construct(FullChunk $chunk, CompoundTag $nbt){
 		parent::__construct($chunk, $nbt);
 		$this->inventory = new EnchantInventory($this);
-		$this->namedtag->Items = new EnumTag("Items", []);
-		$this->namedtag->Items->setTagType(NBT::TAG_Compound);
+		$this->namedtag->Items = new CompoundTag("Items", []);
+		//$this->namedtag->Items->setTagType(NBT::TAG_Compound);
 		$this->scheduleUpdate();
 	}
 	public function getName() : string{
