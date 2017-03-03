@@ -119,9 +119,9 @@ class EnderChest extends Transparent{
 				Tile::createTile("EnderChest", $this->getLevel(), $nbt);
 			}
 
-			if($player->isCreative() and $player->getServer()->limitedCreative){
-				return true;
-			}
+			//if($player->isCreative() and $player->getServer()->limitedCreative){
+				//return true;
+			//}
 
 			$player->getEnderChestInventory()->openAt($this);
 		}
@@ -129,13 +129,13 @@ class EnderChest extends Transparent{
 		return true;
 	}
 
-	public function getDrops(Item $item) : array{
-		if($item->hasEnchantment(Enchantment::TYPE_MINING_SILK_TOUCH)){
-			return [
-				[$this->id, 0, 1],
-			];
-		}
-		return [
+	//public function getDrops(Item $item) : array{
+	//	if($item->hasEnchantment(Enchantment::TYPE_MINING_SILK_TOUCH)){
+		//	return [
+				//[$this->id, 0, 1],
+			//];
+		//}
+		//return [
 			[Item::OBSIDIAN, 0, 8],
 		];
 	}
