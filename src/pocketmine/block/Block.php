@@ -132,11 +132,6 @@ class Block extends Position implements BlockIds, Metadatable{
 			self::$list[self::BURNING_FURNACE] = BurningFurnace::class;
 			self::$list[self::SIGN_POST] = SignPost::class;
 			self::$list[self::WOOD_DOOR_BLOCK] = WoodDoor::class;
-			self::$list[self::SPRUCE_DOOR_BLOCK] = SpruceDoor::class;
-			self::$list[self::BIRCH_DOOR_BLOCK] = BirchDoor::class;
-			self::$list[self::JUNGLE_DOOR_BLOCK] = JungleDoor::class;
-			self::$list[self::ACACIA_DOOR_BLOCK] = AcaciaDoor::class;
-			self::$list[self::DARK_OAK_DOOR_BLOCK] = DarkOakDoor::class;
 			self::$list[self::LADDER] = Ladder::class;
 			self::$list[self::RAIL] = Rail::class;
 
@@ -196,7 +191,6 @@ class Block extends Position implements BlockIds, Metadatable{
 			self::$list[self::LIT_REDSTONE_LAMP] = LitRedstoneLamp::class;
 			self::$list[self::SANDSTONE_STAIRS] = SandstoneStairs::class;
 			self::$list[self::EMERALD_ORE] = EmeraldOre::class;
-			self::$list[self::ENDER_CHEST] = EnderChest::class;
 			self::$list[self::TRIPWIRE_HOOK] = TripwireHook::class;
 			self::$list[self::TRIPWIRE] = Tripwire::class;
 			self::$list[self::EMERALD_BLOCK] = Emerald::class;
@@ -282,7 +276,7 @@ class Block extends Position implements BlockIds, Metadatable{
 				}else{
 					self::$lightFilter[$id] = 1;
 					for($data = 0; $data < 16; ++$data){
-						self::$fullList[($id << 4) | $data] = new Block($id, $data);
+						self::$fullList[($id << 4) | $data] = new UnknownBlock($id, $data);
 					}
 				}
 			}
@@ -302,10 +296,10 @@ class Block extends Position implements BlockIds, Metadatable{
 			if($block !== null){
 				$block = new $block($meta);
 			}else{
-				$block = new Block($id, $meta);
+				$block = new UnknownBlock($id, $meta);
 			}
 		}catch(\RuntimeException $e){
-			$block = new Block($id, $meta);
+			$block = new UnknownBlock($id, $meta);
 		}
 
 		if($pos !== null){
